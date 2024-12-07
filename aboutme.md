@@ -21,4 +21,3 @@ Whether it's implementing data pipelines, developing machine learning models, or
 
 I'm not just building technologies; I'm crafting solutions that transform how businesses understand and leverage their data. My goal is to continue pushing the boundaries of what's possible at the intersection of data science, machine learning, and innovative engineering.
 
-Ready to transform data into opportunity? Let's connect and explore how we can drive innovation together.
