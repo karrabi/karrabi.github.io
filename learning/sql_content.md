@@ -1,0 +1,23 @@
+SELECT command:
+-	Simple SELECT command
+-	ORDER BY
+-	WHERE Clause
+-	Sub Queries:
+    - In
+    - Exists
+    - Any
+    - All
+-	Aggregate functions
+-	GROUP BY
+-	HAVING
+-	UINION / UNION ALL
+-	JOIN (inner / left / right / full / outer)
+-	Window functions (ROW_NUMBER() / RANK() / DENSE_RANK() / NTILE() / LAG() / LEAD() / SUM() / AVG() )
+    - OVER (PARTITION BY …
+    - OVER (ORDER BY …
+    - OVER (PARTITION BY … ORDER BY …
+-	CTE (Common Table Expressions)
+-	Common functions
+    - String
+    - Numeric
+    - Date
