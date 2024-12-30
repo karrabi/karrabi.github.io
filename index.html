@@ -4,286 +4,474 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmad Karrabi - Data Scientist | Data Engineer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Simple navigation scroll function
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
         }
+        .navbar, .footer {
+            background-color: #333;
+        }
+        .navbar-brand, .nav-link, .footer a {
+            color: #ff9800 !important;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+        .section-title {
+            color: #ff9800;
+        }
+        .card {
+            background-color: #2c2c2c;
+            border: none;
+        }
+        .card-title, .card-text, .card-body ul li, .card-body p {
+            color: #f5f5f5;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+        .btn-primary {
+            background-color: #ff9800;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ffc107;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        .text-light, .text-warning, .text-white, .text-center p, .text-center a {
+            color: #f5f5f5 !important;
+        }
+        .card-img-top {
+            transition: transform 0.3s;
+        }
+        .card-img-top:hover {
+            transform: rotateY(180deg);
+        }
+        .key-achievements {
+            color: #ffc107;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-normal tracking-normal">
+<body class="smooth-scroll">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">Ahmad Karrabi Portfolio</div>
-            <div class="space-x-4">
-                <a href="#home" onclick="scrollToSection('home')" class="hover:text-blue-600 transition">Home</a>
-                <a href="#about" onclick="scrollToSection('about')" class="hover:text-blue-600 transition">About</a>
-                <a href="#skills" onclick="scrollToSection('skills')" class="hover:text-blue-600 transition">Skills</a>
-                <a href="#experience" onclick="scrollToSection('experience')" class="hover:text-blue-600 transition">Experience</a>
-                <a href="#projects" onclick="scrollToSection('projects')" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#contact" onclick="scrollToSection('contact')" class="hover:text-blue-600 transition">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ahmad Karrabi Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#repositories">Repositories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-white pt-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-4 text-gray-800">Ahmad Karrabi</h1>
-            <h2 class="text-3xl mb-6 text-blue-600">Data Scientist | Data Engineer</h2>
-            <p class="max-w-2xl mx-auto text-gray-600 text-lg text-center">
-                a <strong>Data Scientist</strong> with Data Engineering and Business Analysis background.</br>
-                a <strong>Data Engineer </strong> with Software Engineering, Database Architecture, Network Administration, and Virtualization background.</br>
-                a <strong>Software Engineer</strong> and <strong>Database Architect</strong> with Software Development, Database Programming, and Business Analysis background.</br>
-                a Team Player, Problem-Solver, Self-Motivated, and Data-Oriented Professional.</br>
-            </p>
-            <div class="mt-8">
-                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Get In Touch</a>
-            </div>
+    <section id="home" class="min-vh-100 d-flex align-items-center justify-content-center bg-gradient-to-br from-gray-800 to-gray-900 pt-5 fade-in">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4 text-light">Ahmad Karrabi</h1>
+            <h2 class="h3 mb-6 text-warning">Data Scientist | Data Engineer</h2>
+            <img src="images/bio03.png" alt="my journey" class="img-fluid" style="max-width: 500px;">
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">About Me</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-lg text-gray-700 mb-6">
-                    I am a detail-oriented data scientist who bridges technological complexity with business needs. My expertise lies in transforming raw data into actionable insights through innovative machine learning, statistical analysis, and engineering approaches.
-                </p>
-                <a href="about-me.html" class="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
-                    Read More About Me
-                </a>
+    <section id="about" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="lead">
+                        I am a highly accomplished Data Engineer and Software Developer with over 15 years of experience in 
+                        designing and implementing scalable data solutions, ETL pipelines, machine learning systems, and enterprise 
+                        software applications. My professional journey spans multiple technologies and industries, including 
+                        cryptocurrency trading, GPS tracking, retail analytics, healthcare, and enterprise management systems. 
+                        I bring a unique blend of technical prowess, analytical thinking, and collaborative problem-solving skills 
+                        that enable me to transform complex business requirements into robust, efficient technological solutions.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Technical Skills</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="images/programming.png" alt="Python Postgres Container Starter Logo" style="width: 96px; height: auto; margin: 0 auto;">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500 text-center">Programming</h3>
-                    <ul class="space-y-2">
-                        <li>Python (Advanced)</li>
-                        <li>SQL (Advanced)</li>
-                        <li>PySpark</li>
-                        <li>Java</li>
-                    </ul>
+    <section id="skills" class="py-5 bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/programming.png" class="card-img-top mx-auto" alt="Programming" style="width: 96px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Programming</h5>
+                            <ul class="list-unstyled">
+                                <li>Python (Advanced)</li>
+                                <li>SQL (Advanced)</li>
+                                <li>PySpark</li>
+                                <li>Java</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="images/cloud.png" alt="Python Postgres Container Starter Logo" style="width: 96px; height: auto; margin: 0 auto;">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500 text-center">Cloud & DevOps</h3>
-                    <ul class="space-y-2">
-                        <li>AWS</li>
-                        <li>Microsoft Azure</li>
-                        <li>Databricks</li>
-                        <li>ESXi Virtualization</li>
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>Terraform</li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/cloud.png" class="card-img-top mx-auto" alt="Cloud & DevOps" style="width: 96px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud & DevOps</h5>
+                            <ul class="list-unstyled">
+                                <li>AWS</li>
+                                <li>Microsoft Azure</li>
+                                <li>Databricks</li>
+                                <li>ESXi Virtualization</li>
+                                <li>Docker</li>
+                                <li>Kubernetes</li>
+                                <li>Terraform</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="images/data.png" alt="Python Postgres Container Starter Logo" style="width: 96px; height: auto; margin: 0 auto;">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500 text-center">Data Tools</h3>
-                    <ul class="space-y-2">
-                        <li>Apache Airflow</li>
-                        <li>PowerBI</li>
-                        <li>Apache Kafka</li>
-                        <li>Pandas</li>
-                        <li>Numpy</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/data.png" class="card-img-top mx-auto" alt="Data Tools" style="width: 96px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Tools</h5>
+                            <ul class="list-unstyled">
+                                <li>Apache Airflow</li>
+                                <li>PowerBI</li>
+                                <li>Apache Kafka</li>
+                                <li>Pandas</li>
+                                <li>Numpy</li>
+                                <li>Matplotlib</li>
+                                <li>Seaborn</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="images/AITools.png" alt="Python Postgres Container Starter Logo" style="width: 96px; height: auto; margin: 0 auto;">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-500 text-center">AI Tools</h3>
-                    <ul class="space-y-2">
-                        <li>TensorFlow</li>
-                        <li>Keras</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>OpenCV</li>
-                        <li>Transformers (Hugging Face)</li>
-                    </ul>
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/AITools.png" class="card-img-top mx-auto" alt="AI Tools" style="width: 96px;">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Tools</h5>
+                            <ul class="list-unstyled">
+                                <li>TensorFlow</li>
+                                <li>Keras</li>
+                                <li>PyTorch</li>
+                                <li>Scikit-learn</li>
+                                <li>OpenCV</li>
+                                <li>Transformers (Hugging Face)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience -->
-    <section id="experience" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Professional Experience</h2>
-            
-            <!-- TradeGeniusX Experience -->
-            <div class="max-w-4xl mx-auto mb-12 bg-gray-50 p-8 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Senior Data Engineer | TradeGeniusX</h3>
-                <p class="text-gray-600 mb-4">Aug 2022 - Present</p>
-                <p class="text-gray-600 mb-4">TradeGeniusX is a fintech startup that was founded in 2020 and operates in the
-                    cryptocurrency and forex trading field. The company specializes in providing market prediction and
-                    automated trading tools. Their unique approach involves combining machine learning
-                    techniques with trading market indicators to enhance their insights and potentially improve
-                    trading outcomes.</p>
-                <ul class="list-disc list-inside space-y-3 text-gray-700">
-                    <li>Implemented the company's entire data platform using Apache Airflow, AWS, and Azure</li>
-                    <li>Conducted backtesting solutions with Python for performance and accuracy analysis</li>
-                    <li>Collaborated with market trading team analysts to develop trading market indicators</li>
-                    <li>Utilized Apache Kafka for streaming live trading market data</li>
-                    <li>Successfully integrated machine learning into major company products</li>
-                </ul>
-                <div class="mt-6">
-                    <h4 class="font-bold text-blue-500 mb-3">Key Achievements</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Reduced data extraction costs by efficiently implementing trading market indicators</li>
-                        <li>Increased signal prediction accuracy by combining machine learning models and market data analysis</li>
-                        <li>Enhanced company agility through efficient backtesting solutions</li>
-                    </ul>
+    <!-- Projects -->
+    <section id="projects" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">AI-Powered Personalized Care Plans</h5>
+                            <p class="card-text">March 2024 - August 2024</p>
+                            <p class="card-text">Developed an AI system that creates personalized care plans for patients based on their unique health conditions, preferences, and needs. The system enhances patient care through tailored treatment plans, leading to improved health outcomes and patient satisfaction.</p>
+                            <ul class="list-unstyled">
+                                <li>Developed robust data integration pipelines to gather and unify data from multiple sources</li>
+                                <li>Implemented machine learning models to predict patient health outcomes</li>
+                                <li>Designed a personalization engine to tailor care plans based on individual needs</li>
+                                <li>Created a user-friendly dashboard for healthcare providers</li>
+                                <li>Deployed the AI system on a scalable cloud infrastructure</li>
+                            </ul>
+                            <h6 class="mt-4 key-achievements">Key Achievements</h6>
+                            <ul class="list-unstyled">
+                                <li>Successfully implemented ML models with continuous learning capabilities</li>
+                                <li>Enhanced patient care and satisfaction through personalized treatment plans</li>
+                                <li>Increased efficiency for healthcare providers by automating care plan creation</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Rahnegar Gostar Experience -->
-            <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Data Engineer | RGK Trading Co.</h3>
-                <p class="text-gray-600 mb-4">Aug 2017 - Aug 2022</p>
-                <p class="text-gray-600 mb-4">RGK trading company is a prominent distributor of GPS trackers in
-                    Iran. They specialize in providing GPS tracker devices, GPS tracking systems, and GPS
-                    tracking solutions to various businesses operating in the field of GPS tracking.</p>
-                <ul class="list-disc list-inside space-y-3 text-gray-700">
-                    <li>Collaborated with GPS tracking device production teams to optimize dataflow</li>
-                    <li>Implemented comprehensive issue-tracking project in Python</li>
-                    <li>Developed ETL pipelines with containerization using Docker and Kubernetes</li>
-                    <li>Provided technical solutions for sales and support teams</li>
-                    <li>Analyzed GPS tracking dataflows for data-driven decision making</li>
-                </ul>
-                <div class="mt-6">
-                    <h4 class="font-bold text-blue-500 mb-3">Key Achievements</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Reduced manual GPS tracker issue-tracking processes by 70%</li>
-                        <li>Improved system performance through efficient ETL pipelines</li>
-                        <li>Enhanced technical support team productivity and customer satisfaction</li>
-                    </ul>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Enterprise Data Warehouse for Nationwide Grocery Chain</h5>
+                            <p class="card-text">June 2023 - December 2023</p>
+                            <p class="card-text">Designed and implemented an AWS-based Data Warehouse and ETL pipeline for a regional grocery chain. The project provided stakeholders with actionable insights from sales data collected from 4000 stores across the region.</p>
+                            <ul class="list-unstyled">
+                                <li>Designed and implemented the first Data Warehouse for the company on AWS</li>
+                                <li>Developed ETL pipelines using AWS Glue and PySpark</li>
+                                <li>Employed AWS Step Functions for orchestration of ETL workflows</li>
+                                <li>Implemented monitoring solutions using Amazon CloudWatch</li>
+                                <li>Managed data storage using Amazon S3 and Amazon Redshift</li>
+                            </ul>
+                            <h6 class="mt-4 key-achievements">Key Achievements</h6>
+                            <ul class="list-unstyled">
+                                <li>Successfully created a scalable and secure data infrastructure on AWS</li>
+                                <li>Improved data quality and reliability through rigorous validation checks</li>
+                                <li>Streamlined data integration and processing for large volumes of data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis for Market Forecasting</h5>
+                            <p class="card-text">February 2023 - April 2023</p>
+                            <p class="card-text">Developed a sentiment analysis system to analyze social media, news articles, and financial reports for cryptocurrency and forex trading. Utilized NLP techniques to gauge market sentiment and integrate this data into trading strategies.</p>
+                            <ul class="list-unstyled">
+                                <li>Developed comprehensive data collection pipelines for text data</li>
+                                <li>Implemented robust NLP techniques to analyze market sentiment</li>
+                                <li>Fine-tuned transformer models for improved classification</li>
+                                <li>Integrated sentiment data into existing trading algorithms</li>
+                                <li>Conducted extensive backtesting for strategy evaluation</li>
+                            </ul>
+                            <h6 class="mt-4 key-achievements">Key Achievements</h6>
+                            <ul class="list-unstyled">
+                                <li>Enhanced trading strategy efficiency through sentiment analysis</li>
+                                <li>Improved prediction accuracy using NLP-driven insights</li>
+                                <li>Successfully integrated real-time sentiment data into trading decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Scalable ETL Pipeline for Real-Time GPS Data Streaming</h5>
+                            <p class="card-text">February 2018 - October 2018</p>
+                            <p class="card-text">Designed and implemented an ETL pipeline for processing real-time GPS data with high throughput and scalability. Created a comprehensive system for data ingestion, processing, and storage using modern cloud technologies.</p>
+                            <ul class="list-unstyled">
+                                <li>Utilized Apache Kafka for real-time data ingestion</li>
+                                <li>Implemented Apache Spark with PySpark for data processing</li>
+                                <li>Employed Docker and Kubernetes for containerization</li>
+                                <li>Used Terraform for infrastructure management</li>
+                                <li>Integrated with Microsoft SQL Server for data warehousing</li>
+                            </ul>
+                            <h6 class="mt-4 key-achievements">Key Achievements</h6>
+                            <ul class="list-unstyled">
+                                <li>Built highly scalable data processing infrastructure</li>
+                                <li>Achieved high system availability and reduced operational costs</li>
+                                <li>Enhanced data quality through robust validation checks</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications -->
-    <section id="certifications" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Professional Certifications</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/Applied_Data_Science.png" alt="IBM Logo" style="width: 100px; height: auto; margin: 0 auto;">
-                    <h3 class="text-xl font-semibold mb-3">IBM Applied Data Science</h3>
-                    <p class="text-gray-600">Capstone Certification</p>
+    <section id="certifications" class="py-5 bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Professional Certifications</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/Applied_Data_Science.png" class="card-img-top mx-auto" alt="IBM Logo" style="width: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">IBM Applied Data Science</h5>
+                            <p class="card-text">Capstone Certification</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/aws.jpeg" alt="AWS Solutions Architect Logo" style="width: 100px; height: auto; margin: 0 auto;">
-                    <h3 class="text-xl font-semibold mb-3">AWS Solutions Architect</h3>
-                    <p class="text-gray-600">Associate Certification</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/aws.jpeg" class="card-img-top mx-auto" alt="AWS Solutions Architect Logo" style="width: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">AWS Solutions Architect</h5>
+                            <p class="card-text">Associate Certification</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/apache-airflow_large.png" alt="Apache Airflow Logo" style="width: 100px; height: auto; margin: 0 auto;">
-                    <h3 class="text-xl font-semibold mb-3">Apache Airflow</h3>
-                    <p class="text-gray-600">Hands-On Certification</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/apache-airflow_large.png" class="card-img-top mx-auto" alt="Apache Airflow Logo" style="width: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Apache Airflow</h5>
+                            <p class="card-text">Hands-On Certification</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section (Placeholder) -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Projects</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/AWS-Based_ETL_Data_Pipeline.jpg" alt="AWS-Based ETL Data Pipeline Logo" style="width: 250px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/AWS-Based_ETL_Data_Pipeline" class="text-xl font-semibold mb-3">AWS-Based ETL Data Pipeline</a>
-                    <p class="text-gray-600">AWS-based data pipeline solution using the most popular and robust services</p>
-                </div>                
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/ETL_Pipeline_with_Apache_Kafka_for_Trading_Market_Data.jpg" alt="Apache Kafka Architecture guide Logo" style="width: 300px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/Samplate/tree/main/StreamingForexDataWithApacheKafka" class="text-xl font-semibold mb-3">Apache Kafka Architecture guide</a>
-                    <p class="text-gray-600">ETL Pipeline with Apache Kafka for Trading Market Data</p>
+    <section id="repositories" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Public Repositories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/AWS-Based_ETL_Data_Pipeline.jpg" class="card-img-top mx-auto" alt="AWS-Based ETL Data Pipeline Logo" style="width: 250px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/AWS-Based_ETL_Data_Pipeline" class="card-title h5 d-block">AWS-Based ETL Data Pipeline</a>
+                            <p class="card-text">AWS-based data pipeline solution using the most popular and robust services</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/projectdeployment.jpg" alt="SampleCICDProject Logo" style="width: 300px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/SampleCICDProject" class="text-xl font-semibold mb-3">Sample CI/CD Project</a>
-                    <p class="text-gray-600">how to set up Continuous Integration and Continuous Deployment (CI/CD)</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/ETL_Pipeline_with_Apache_Kafka_for_Trading_Market_Data.jpg" class="card-img-top mx-auto" alt="Apache Kafka Architecture guide Logo" style="width: 300px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/Samplate/tree/main/StreamingForexDataWithApacheKafka" class="card-title h5 d-block">Apache Kafka Architecture guide</a>
+                            <p class="card-text">ETL Pipeline with Apache Kafka for Trading Market Data</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/Sample_ETL_Project.png" alt="Sample ETL Project Logo" style="width: 250px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/DataEngineering_ETL_Project_sampleETLproject" class="text-xl font-semibold mb-3">Sample ETL Project</a>
-                    <p class="text-gray-600">An end-to-end data pipeline</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/projectdeployment.jpg" class="card-img-top mx-auto" alt="SampleCICDProject Logo" style="width: 300px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/SampleCICDProject" class="card-title h5 d-block">Sample CI/CD Project</a>
+                            <p class="card-text">How to set up Continuous Integration and Continuous Deployment (CI/CD)</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/Remove_BG_Development.jpg" alt="RemoveBGDevelopment Logo" style="width: 300px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/RemoveBGDevelopment" class="text-xl font-semibold mb-3">RemoveBGDevelopment</a>
-                    <p class="text-gray-600">How to Develop an AI project in 20 minutes - Remove images background</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/Sample_ETL_Project.png" class="card-img-top mx-auto" alt="Sample ETL Project Logo" style="width: 250px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/DataEngineering_ETL_Project_sampleETLproject" class="card-title h5 d-block">Sample ETL Project</a>
+                            <p class="card-text">An end-to-end data pipeline</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/pathrise_Logo.png" alt="DataScience Project Pathrise Logo" style="width: 300px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/DataScience_Project_Pathrise" class="text-xl font-semibold mb-3">DataScience Project Pathrise</a>
-                    <p class="text-gray-600">Pathrise Data Challenge Project</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/Remove_BG_Development.jpg" class="card-img-top mx-auto" alt="RemoveBGDevelopment Logo" style="width: 300px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/RemoveBGDevelopment" class="card-title h5 d-block">RemoveBGDevelopment</a>
+                            <p class="card-text">How to Develop an AI project in 20 minutes - Remove images background</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="./images/titanicillustration.jpg" alt="Titanic Survival Prediction Project Logo" style="width: 280px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/DataScience_Project_Pathrise" class="text-xl font-semibold mb-3">Titanic Survival Prediction Project</a>
-                    <p class="text-gray-600">Analysis and machine learning model for predicting survival on the Titanic based on passenger data</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/pathrise_Logo.png" class="card-img-top mx-auto" alt="DataScience Project Pathrise Logo" style="width: 300px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/DataScience_Project_Pathrise" class="card-title h5 d-block">DataScience Project Pathrise</a>
+                            <p class="card-text">Pathrise Data Challenge Project</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/Docker.png" alt="Python Postgres Container Starter Logo" style="width: 350px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/python_with_docker" class="text-xl font-semibold mb-3">Python Postgres Container Starter</a>
-                    <p class="text-gray-600">A simple and ready-to-use environment for starting a Python project with a PostgreSQL database</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="./images/titanicillustration.jpg" class="card-img-top mx-auto" alt="Titanic Survival Prediction Project Logo" style="width: 280px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/DataScience_Project_Pathrise" class="card-title h5 d-block">Titanic Survival Prediction Project</a>
+                            <p class="card-text">Analysis and machine learning model for predicting survival on the Titanic based on passenger data</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/webscraping.png" alt="RemoveBGDevelopment Logo" style="width: 200px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/WebScrapingTutorial" class="text-xl font-semibold mb-3">Web Scraping Tutorial</a>
-                    <p class="text-gray-600">A guide to understanding web scraping techniques using Python</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/Docker.png" class="card-img-top mx-auto" alt="Python Postgres Container Starter Logo" style="width: 350px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/python_with_docker" class="card-title h5 d-block">Python Postgres Container Starter</a>
+                            <p class="card-text">A simple and ready-to-use environment for starting a Python project with a PostgreSQL database</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/logging.png" alt="DataScience Project Pathrise Logo" style="width: 200px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/logging_in_python" class="text-xl font-semibold mb-3">Python Logging Tutorial</a>
-                    <p class="text-gray-600">A concise guide to understanding and configuring logging in Python projects</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/webscraping.png" class="card-img-top mx-auto" alt="RemoveBGDevelopment Logo" style="width: 200px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/WebScrapingTutorial" class="card-title h5 d-block">Web Scraping Tutorial</a>
+                            <p class="card-text">A guide to understanding web scraping techniques using Python</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/sqlicon.png" alt="Python Postgres Container Starter Logo" style="width: 200px; height: auto; margin: 0 auto;">
-                    <a href="https://github.com/karrabi/SQLTutorial" class="text-xl font-semibold mb-3">SQL Tutorial</a>
-                    <p class="text-gray-600">An interactive guide to learning SQL by working with real-world sales data</p>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/logging.png" class="card-img-top mx-auto" alt="DataScience Project Pathrise Logo" style="width: 200px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/logging_in_python" class="card-title h5 d-block">Python Logging Tutorial</a>
+                            <p class="card-text">A concise guide to understanding and configuring logging in Python projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <img src="images/sqlicon.png" class="card-img-top mx-auto" alt="Python Postgres Container Starter Logo" style="width: 200px;">
+                        <div class="card-body">
+                            <a href="https://github.com/karrabi/SQLTutorial" class="card-title h5 d-block">SQL Tutorial</a>
+                            <p class="card-text">An interactive guide to learning SQL by working with real-world sales data</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
-            <div class="mt-8">
-                <p>✉️ a.karrabi@gmail.com</p>
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title mb-5">Get In Touch</h2>
+            <div class="mt-4">
+                <p><i class="fas fa-envelope"></i> a.karrabi@gmail.com</p>
+                <p><a href="https://www.linkedin.com/in/karrabi" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                <p><a href="https://github.com/karrabi" class="text-white"><i class="fab fa-github"></i> GitHub</a></p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container text-center">
             <p>&copy; 2024 Ahmad Karrabi. All Rights Reserved.</p>
-            <div class="mt-4 space-x-4">
-                <!-- PLACEHOLDER: Add your social media links -->
-                <a href="https://www.linkedin.com/in/karrabi" class="hover:text-blue-400">LinkedIn</a>
-                <a href="https://github.com/karrabi" class="hover:text-blue-400">GitHub</a>
-            </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

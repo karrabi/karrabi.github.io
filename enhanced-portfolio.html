@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Karrabi - Senior Data Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213E;
+            --light-text: #E8E8E8;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans leading-normal tracking-normal">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-90 backdrop-filter backdrop-blur-lg" style="background-color: rgba(26, 26, 46, 0.9);">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">AK</div>
+            <div class="space-x-6">
+                <a href="#home" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="#about" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fas fa-user mr-1"></i> About
+                </a>
+                <a href="#skills" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fas fa-code mr-1"></i> Skills
+                </a>
+                <a href="#projects" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fas fa-project-diagram mr-1"></i> Projects
+                </a>
+                <a href="#repositories" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fab fa-github mr-1"></i> Repositories
+                </a>
+                <a href="#contact" class="nav-item text-gray-300 hover:text-white transition">
+                    <i class="fas fa-envelope mr-1"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16" 
+             style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h1 class="text-6xl font-bold mb-4 gradient-text">Ahmad Karrabi</h1>
+            <h2 class="text-3xl mb-6 text-gray-300">Senior Data Engineer</h2>
+            <div class="relative">
+                <img src="images/bio01.png" alt="my journey" class="w-96 h-auto mx-auto rounded-lg shadow-2xl" 
+                     style="animation: float 6s ease-in-out infinite;">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20" style="background-color: var(--darker-bg);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">About Me</h2>
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-lg text-gray-300 mb-6">
+                    <!-- Your existing about text -->
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20" style="background-color: var(--dark-bg);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Technical Skills</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Skill cards with hover effects and icons -->
+                <div class="bg-opacity-10 bg-white p-6 rounded-lg shadow-xl card-hover" 
+                     data-aos="fade-up" data-aos-delay="100"
+                     style="backdrop-filter: blur(10px);">
+                    <i class="fas fa-code text-5xl mb-4 gradient-text"></i>
+                    <!-- Rest of your skills content -->
+                </div>
+                <!-- Repeat for other skill sections -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with other sections following similar styling patterns -->
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 gradient-text" data-aos="fade-up">Get In Touch</h2>
+            <div class="mt-8 space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <p class="flex items-center justify-center text-xl">
+                    <i class="fas fa-envelope mr-3 text-2xl gradient-text"></i>
+                    a.karrabi@gmail.com
+                </p>
+                <div class="flex justify-center space-x-6 mt-6">
+                    <a href="https://www.linkedin.com/in/karrabi" class="text-3xl hover:text-blue-400 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/karrabi" class="text-3xl hover:text-gray-400 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Smooth scroll function
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animations
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+            } else {
+                nav.style.backgroundColor = 'rgba(26, 26, 46, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
